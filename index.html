@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Alberta Compensation Transparency Toolkit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Angulartics is an AngularJS module that enables web analytics for your application using the vendor of your choice.">
+    <meta name="author" content="Luis Farzati">
+    <meta name="google-site-verification" content="-hjukrhf79hZA9uTDhN8gZwzjYoa0WCipxEdDc4gRu0" />
+    <meta name="robots" content="index,follow" />
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <style>
+        .twitter-follow-button[style], .twitter-share-button[style] {
+            margin-top: 17px;
+            margin-left: 10px;
+        }
+
+        .logos img {
+            background: white;
+            width: 40px;
+            height: 40px;
+        }
+
+        del {
+            color: red;
+        }
+
+        code strong {
+            color: black;
+        }
+
+            code strong.highlighted {
+                color: navy;
+            }
+
+        table.MsoTableGrid {
+            border: solid windowtext 1.0pt;
+            font-size: 11.0pt;
+            font-family: "Calibri","sans-serif";
+        }
+
+        .auto-style7 {
+            width: 151px;
+        }
+
+        .auto-style8 {
+            width: 137px;
+        }
+    </style>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-10255892-8', 'luisfarzati.github.io');
+        ga('send', 'pageview');
+    </script>
+</head>
+<body ng-app="website">
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0; background-color: #36424a">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a href="#overview" analytics-on analytics-category="Navigation" analytics-event="overview">Overview</a></li>
+                <li><a href="#implementation-guide" analytics-on analytics-category="Navigation" analytics-event="implementation-guide">Implementation Guide</a></li>
+                <li><a href="#self-host" analytics-on analytics-category="Navigation" analytics-event="self-host">Self-hosting</a></li>
+                <li><a href="//github.com/ab-compensation-tools/salaries" analytics-on analytics-category="Navigation" analytics-event="Source code">Source Code</a></li>
+                <!--<li><a href="//github.com/ab-compensation-tools/salaries/releases" analytics-on analytics-category="Navigation" analytics-event="Download">Download</a></li>-->
+            </ul>
+        </div>
+    </nav>
+
+    <div class="well" style="background-size: 100%; background-color:transparent">
+        <div class="container">
+            <h1>Alberta Compensation Transparency Toolkit</h1>
+            <hr />
+        </div>
+    </div>
+
+    <div class="container">
+        <section id="overview" analytics-on="scrollby" analytics-category="Scrolling" scrollby-offset="20%">
+            <div class="col-md-4">
+                <h4>Cross-platform</h4>
+                <p>The Alberta Compensation Transparency Toolkit is a platform-agnostic JavaScript toolkit built to simplify the process of setting up a rich interactive grid for compensation transparency web pages.</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Simple</h4>
+                <p>The toolkit eliminates the need for custom programming. It automatically generates a compensation table from the data in a CSV file.</p>
+            </div>
+            <div class="col-md-4">
+                <h4>Interactive</h4>
+                <p>The generated table comes with paging, navigation, sorting and filtering functionality. Users can easily browse the data page by page, and search for records by certain criteria.</p>
+            </div>
+        </section>
+    </div>
+
+    <div class="container">
+        <section id="background" analytics-on="scrollby" analytics-category="Scrolling" scrollby-offset="20%">
+            <div>
+                <br />
+                <table align="center">
+                    <tr>
+                        <td align="center">
+                            <img src="demo/demo.png" style="height: 350px; width: auto" alt="Figure of how it works">
+                            <br />
+                            View <a target="_blank" href="demo/sample.html">online sample</a>
+                        </td>
+                    </tr>
+                </table>
+                <br />
+                <p>
+                    Here are some easy-to-follow steps for using this toolkit. 
+                    This guide assumes the following prerequisites and access:
+                    <ul>
+                        <li>
+                            You are familiar with HTML.
+                        </li>
+                        <li>
+                            You are able to create one or more pages on the website that will be hosting the compensation grid.
+                        </li>
+                        <li>
+                            You are able to generate and to host a CSV (Comma Separated Value) file containing the data.
+                        </li>
+                        <li>
+                            (For CMS users only) You are able to embed script tags in the page.
+                        </li>
+                    </ul>
+                </p>
+            </div>
+        </section>
+
+        <section id="overview" analytics-on="scrollby" analytics-category="Scrolling" scrollby-offset="20%">
+            <div class="page-header">
+                <h3>Overview</h3>
+            </div>
+            <div>
+                <table class="table table-bordered">
+                    <tr>
+                        <td style="width:25%"><b>Columns on page</b></td>
+                        <td style="width:20%"><b>Columns in CSV</b></td>
+                        <td><b>Comments</b></td>
+                    </tr>
+                    <tr>
+                        <td>Public Sector Body</td>
+                        <td>PublicSectorBody</td>
+                        <td>Name of the agency, board, or committee.</td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td>Name</td>
+                        <td>Formatted as Lastname, Firstname.</td>
+                    </tr>
+                    <tr>
+                        <td>Position</td>
+                        <td>Position</td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>Year</td>
+                        <td>Year</td>
+                        <td>Four digits, e.g. 2016.</td>
+                    </tr>
+                    <tr>
+                        <td>Compensation</td>
+                        <td>Compensation</td>
+                        <td>A decimal number that is accurate to two decimal places. Do <b>NOT</b> use any dollar sign or thousand separators.</td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td>Other</td>
+                        <td>Same format as above.</td>
+                    </tr>
+                    <tr>
+                        <td>Severance</td>
+                        <td>Severance</td>
+                        <td>Same format as above.</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">Attachments</td>
+                        <td>ContractAttachment</td>
+                        <td>Link to scanned contract. Public accessible PDF file with relative URL e.g. <code>attach/abc.pdf</code> 
+                            or full URL e.g. <code>http://www.example.com/<b>attach/abc.pdf</b></code>. </td>
+                    </tr>
+                    <tr>
+                        <td>TerminationAttachment</td>
+                        <td>Link to scanned termination agreement. Same requirements as above</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section id="implementation-guide" analytics-on="scrollby" analytics-category="Scrolling" scrollby-offset="20%">
+            <div class="page-header">
+                <h3>Implementation Guide</h3>
+            </div>
+            <div>
+<!--                <p>
+                    This fast procedure uses CDNs to host all components of the toolkit, including <a href="github.io">GitHub.io</a> 
+                    and official CDNs of jQuery and Kendo UI.
+                </p>-->
+                <h4>Host your attachments</h4>
+                <p>
+                    Upload your attachment files to your hosting location. Record the URL of each attachment file, as you will need it
+                    later on when creating the CSV file. 
+                    You may use folders to organize files by year or type and/or establishing a simple naming convention 
+                    to avoid accidental overlaps is advisable.  
+                </p>
+                <h4>Create your CSV file</h4>
+                <p>
+                    This toolkit requires a CSV file having columns specified above. You can simply download the <a href="http://">empty template Excel file</a>, add new rows with your data,
+                    and fill in the attachment URLs, then save it as a CSV file.
+                    Your finished file should look like this <a href="http://">sample CSV file</a>.
+                </p>
+                <h4>Host your CSV file</h4>
+                <p>
+                    We suggest naming the file as <code>disclosure.csv</code> and hosting it in the same path as your disclosure page.
+                    This is where the toolkit looks for CSV file by default.
+                    If the CSV file is hosted in a different location, you will need to provide the URL of the CSV file as explained below.
+                </p>
+                <h4>Modify your disclosure page</h4>
+                <div class="alert alert-info">
+                    <p>Find where you want to embed the table, and insert the lines below.</p>
+                    <pre class="prettyprint">
+<code>&lt;div id="grid"&gt;&lt;/div&gt;
+&lt;script type="text/javascript" 
+  src="http://github.com/abgov/ab-compensation-transparency-toolkit/js/ab-compensation-tools.js"&gt;
+&lt;/script&gt;</code>
+</pre>
+
+                    If your CSV file does not have the <b>default</b> name or location, also insert these lines to explicitly provide the URL.
+
+<pre class="prettyprint">
+<code>&lt;script type="text/javascript"&gt;
+  var csv = <del>"disclosure.csv"</del>; // &lt;-- <b>(Optional)</b> Change to URL of your CSV file.
+&lt;/script&gt;</code>
+</pre>
+                </div>
+                <p>
+                    Your web page should be working now.
+                </p>
+                <div class="alert alert-info">
+                    <p>
+                        This toolkit is designed to create the interactive grid component only, at whatever position the lines above are inserted.  
+                        You will still need to create all surrounding page contents and download links (you may link to the same CSV used in this grid).
+                    </p>
+                </div>
+            </div>
+            <h4>Standard text on disclosure page</h4>
+            <div class="alert alert-info">
+                    <div id="standard-text">
+        <style type="text/css">
+/* from default.css */
+/* DEFAULTS */
+
+#standard-text * {
+	padding: 0;
+	margin: 0;
+	outline: none;
+}
+
+#standard-text {
+	background: #f1f2f2;
+	font: 12px/1.2 Arial, Helvetica, sans-serif;
+	color:Black;
+	background-repeat: repeat;
+}
+
+#standard-text ul li {
+	list-style: square;
+	line-height: 1.4;
+}
+
+#standard-text a {
+	color: #0e82ac;
+	line-height: 1.6;	
+}
+
+#standard-text a:link,
+#standard-text a:visited {
+	text-decoration: none;
+}
+
+/** articles & directories -- directories also use .article */
+
+#standard-text #content .article {
+	background: #fff;
+	padding: 20px 10px 8px;
+	margin: 0 0 20px;
+}
+
+#standard-text #content .article h1 {
+	padding: 0 10px 12px;
+	border-bottom: 1px solid #d1d4d3;
+	margin: 0 0 12px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#standard-text #content .article ol li{
+    padding:0;
+	margin:0 0 0 2px;
+}
+
+#standard-text #content .article ul {
+	padding: 0 10px 12px 25px;
+}
+
+#standard-text #content .article p {
+	padding: 0 10px 12px;
+	line-height: 1.5;
+}
+        </style>
+        <div id="content">
+            <div class="article">
+                <style>
+                    #content .article i {
+                        background: unset;
+                        display: unset;
+                        overflow: unset;
+                    }
+                </style>
+                <h1>Public Sector Body Compensation Disclosure</h1>
+                <p>Public sector bodies are now required to post online the names and compensation paid to:</p>
+                <ul>
+                    <li>all board members</li>
+                    <li>employees who earn over $125,000</li>
+                </ul>
+                <p>This is a requirement under the <i>Public Sector Compensation Transparency Act</i>, which applies to:</p>
+                <ul>
+                    <li>
+                        agencies, boards and commissions governed by the
+                        <a href="http://www.qp.alberta.ca/574.cfm?page=A31P5.cfm&amp;leg_type=Acts&amp;isbncln=9780779761333&amp;display=html">
+                            <i>Alberta Public Agencies Governance Act</i>
+                        </a>
+
+                    </li>
+                    <li><a href="https://www.assembly.ab.ca/links.htm">independent offices of the Legislature</a></li>
+                    <li>employees of Covenant Health</li>
+                    <li>other entities identified in the regulations</li>
+                </ul>
+                <p>The first posting is required by June 30, 2016.</p>
+                <p><a href="http://www.alberta.ca/agency-governance.cfm">Learn more about agencies, boards and commissions</a></p>
+                <p>
+                    <a href="https://www.justice.alberta.ca/programs_services/law/Publications_Library_Law/PublicSectorCompTransAct.aspx">
+                        Learn more about the <i>Public Sector Compensation Transparency Act</i>
+                    </a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+            <p>If you want to include the text above, you may insert the code below to the desired location in your disclosure page.</p>
+                <pre class="prettyprint">
+<code>&lt;div id="content"&gt;
+  &lt;div class="article"&gt;
+    &lt;h1&gt;Public Sector Body Compensation Disclosure&lt;/h1&gt;
+    &lt;p&gt;Public sector bodies are now required to post online the names and compensation paid to:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;all board members&lt;/li&gt;
+      &lt;li&gt;employees who earn over $125,000&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;This is a requirement under the &lt;i&gt;Public Sector Compensation Transparency Act&lt;/i&gt;, which applies to:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;agencies, boards and commissions governed by the
+        &lt;a href="http://www.qp.alberta.ca/574.cfm?page=A31P5.cfm&amp;leg_type=Acts&amp;isbncln=9780779761333&amp;display=html"&gt;
+          &lt;i&gt;Alberta Public Agencies Governance Act&lt;/i&gt;&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li&gt;&lt;a href="https://www.assembly.ab.ca/links.htm"&gt;independent offices of the Legislature&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;employees of Covenant Health&lt;/li&gt;
+      &lt;li&gt;other entities identified in the regulations&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;The first posting is required by June 30, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href="http://www.alberta.ca/agency-governance.cfm"&gt;Learn more about agencies, boards and commissions&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;a href="https://www.justice.alberta.ca/programs_services/law/Publications_Library_Law/PublicSectorCompTransAct.aspx"&gt;
+        Learn more about the &lt;i&gt;Public Sector Compensation Transparency Act&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </section>
+
+        <section id="self-host" analytics-on="scrollby" analytics-category="Scrolling" scrollby-offset="20%">
+            <div class="page-header">
+                <h3>(Optional) Self-hosting Assets</h3>
+            </div>
+            <div>
+                <p>
+                    <!--If you require the toolkit to be self-hosted, please continue to this procedure.-->
+                    By default, this toolkit leverages Content Distribution Networks for the script, image and style assets.
+                    This section contains more advanced instructions for those who prefer to self-host all toolkit assets.  
+                    These steps are not required for the system to function, but may in some cases be preferable or required by your website administrator. 
+                </p>
+                <div class="alert alert-info">
+                    <p>
+                        Host your CSV file if you have not already, refer to the above section for details.
+                    </p>
+                </div>
+                <h4>Setup self-hosted assets</h4>
+                <p>
+                    Download and unzip the <a href="http://">toolkit package</a>, 
+                    and upload its contents to the desired path on your web server or as assets in your CMS.
+                    The package has three subdirectories:
+                    <ul>
+                        <li><code>lib/js/</code> contains the JavaScript files;</li>
+                        <li><code>lib/css/</code> contains the CSS files and images.</li>
+                        <li><code>lib/jsgrid/</code> contains resources for the jsgrid library.</li>
+                    </ul>
+                </p>
+                <h4>Modify your disclosure page</h4>
+                <div class="alert alert-info">
+                    <p>
+                        Find where you want to embed the table, insert the lines below.
+                        Look for the toolkit files in <code>js/</code> and <code>css/</code> subdirectories respectively.
+                    </p>
+                    <pre class="prettyprint">
+<code>&lt;div id="grid"&gt;&lt;/div&gt;
+&lt;script type="text/javascript"
+  src=<del>"js/ab-compensation-tools.js"</del>&gt;       // &lt;-- URL of self-hosted ab-compensation-tools.js
+  &lt;/script&gt;
+&lt;script type="text/javascript"&gt;
+  var csv
+    = <del>"disclosure.csv"</del>;                    // &lt;-- <b>(Optional)</b> Change to URL of your CSV file.
+  var jquery_js
+    = <del>"lib/js/jquery-1.8.3.min.js"</del>;        // &lt;-- URL of self-hosted jquery-1.8.3.min.js (optional if your site already loads jQuery >= 1.8.3)
+  var jsgrid_js
+    = <del>"lib/jsgrid/jsgrid.min.js"</del>;          // &lt;-- URL of self-hosted jsgrid.min.js
+  var papaparse_js
+    = <del>"lib/js/papaparse.min.js"</del>;           // &lt;-- URL of self-hosted papaparse.js
+  var jsgrid_css
+    = <del>"lib/jsgrid/jsgrid.min.css"</del>;         // &lt;-- URL of self-hosted jsgrid.min.css
+  var jsgrid_theme_css
+    = <del>"lib/jsgrid/jsgrid-theme.min.css"</del>;   // &lt;-- URL of self-hosted jsgrid-theme.min.css
+  var grid_css
+    = <del>"lib/css/ab-compensation-tools.css"</del>; // &lt;-- URL of self-hosted ab-compensation-tools.css.
+&lt;/script&gt;</code></pre>
+                    <p>
+                        The self-hosted URL variables listed above are all optional.
+                        If not included, the toolkit will use to the default CDN link for the corresponding file.
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <hr>
+        <footer id="footer">
+            <p class="pull-right"><a href="#top">Back to top</a></p>
+            Code licensed under the <a href="http://opensource.org/licenses/MIT">MIT</a> license.<br>
+            <br>
+        </footer>
+    </div>
+    <!-- /container -->
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; js.async = true; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
+    <noscript>Please enable JavaScript to view the contents.</noscript>
+</body>
+</html>
