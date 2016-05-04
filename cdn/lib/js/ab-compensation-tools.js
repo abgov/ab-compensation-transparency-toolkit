@@ -2,7 +2,6 @@
 'use strict';
 
 var MIN_JQUERY_VERSION = "1.8.3";
-var $j;
 // Toolkit components on CDNs
 var url_jquery_js =
     "//code.jquery.com/jquery-1.8.3.min.js";
