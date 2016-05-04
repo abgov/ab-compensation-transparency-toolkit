@@ -1,0 +1,12 @@
+PublicSectorBody,Position,Name,Year,Compensation,Other,Severance,ContractAttachment,TerminationAttachment
+Public Sector Body 1,Senior Manager,"Lever,Mackenzie",2015,10001,200,0,,attach/termination/T-XXXXX.pdf
+Public Sector Body 1,Board Member,"Otto,Risa",2015,100050,2000,5000,,
+Public Sector Body 1,Chair,"Valderrama,Heide",2015,10000,1000,0,,
+Public Sector Body 1,Board Member,"Magno,Elli",2015,10006,2000,0,attach/contract/C-XXXXX.pdf,
+Public Sector Body 1,Board Member,"Ardon,Dannie",2015,30000,2000,0,attach/contract/C-XXXXX.pdf,
+Public Sector Body 1,Executive Director,"Raina,Oliverio",2015,10000,2000,5000,attach/contract/C-XXXXX.pdf,attach/termination/T-XXXXX.pdf
+Public Sector Body 2,Chair,"Florentino,Sigler",2015,125,14000,0,,attach/termination/T-XXXXX.pdf
+Public Sector Body 2,Board Member,"Odis,Core",2015,10010,95,0,,
+Public Sector Body 3,Chair,"Volpe,Setsuko ",2015,10000,2000,0,,
+Public Sector Body 3,Board Member,"Phares,Barney ",2015,0,20000,0,,
+Public Sector Body 3,Manager,"Doe,John",2015,10000,2000,0,attach/contract/C-XXXXX.pdf,attach/termination/T-XXXXX.pdf
