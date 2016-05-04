@@ -6,7 +6,6 @@ var $j;
 // Toolkit components on CDNs
 var url_jquery_js =
     "//code.jquery.com/jquery-1.8.3.min.js";
-var jquery_compat = false;
 var url_papaparse_js =
     "//cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.min.js";
 var url_jsgrid_js =
@@ -16,7 +15,7 @@ var url_jsgrid_css =
 var url_jsgrid_theme_css = 
     "//cdnjs.cloudflare.com/ajax/libs/jsgrid/1.4.1/jsgrid-theme.min.css";
 var url_grid_css =
-    "lib/css/ab-compensation-tools.css";
+    "//abgov.github.io/ab-compensation-transparency-toolkit/cdn/lib/css/ab-compensation-tools.css";
     
 var theJsGrid = null;
 var strHeaderCss = "";
