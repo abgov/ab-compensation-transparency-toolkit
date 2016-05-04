@@ -9,7 +9,7 @@
     <meta name="google-site-verification" content="-hjukrhf79hZA9uTDhN8gZwzjYoa0WCipxEdDc4gRu0" />
     <meta name="robots" content="index,follow" />
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="//cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
     <style>
         .twitter-follow-button[style], .twitter-share-button[style] {
             margin-top: 17px;
@@ -181,7 +181,7 @@
                         <td rowspan="2">Attachments</td>
                         <td>ContractAttachment</td>
                         <td>Link to scanned contract. Public accessible PDF file with relative URL e.g. <code>attach/abc.pdf</code> 
-                            or full URL e.g. <code>http://www.example.com/<b>attach/abc.pdf</b></code>. </td>
+                            or full URL, however, protocol relative URLs are always advisable: e.g. <code>//www.example.com/<b>attach/abc.pdf</b></code>. </td>
                     </tr>
                     <tr>
                         <td>TerminationAttachment</td>
@@ -209,9 +209,9 @@
                 </p>
                 <h4>Create your CSV file</h4>
                 <p>
-                    This toolkit requires a CSV file having columns specified above. You can simply download the <a href="http://">empty template Excel file</a>, add new rows with your data,
+                    This toolkit requires a CSV file having columns specified above. You can simply download the <a href="//abgov.github.io/ab-compensation-transparency-toolkit/template.xlsx">empty template Excel file</a>, add new rows with your data,
                     and fill in the attachment URLs, then save it as a CSV file.
-                    Your finished file should look like this <a href="http://">sample CSV file</a>.
+                    Your finished file should look like this <a href="//abgov.github.io/ab-compensation-transparency-toolkit/demo/disclosure.csv">sample CSV file</a>.
                 </p>
                 <h4>Host your CSV file</h4>
                 <p>
@@ -225,7 +225,7 @@
                     <pre class="prettyprint">
 <code>&lt;div id="grid"&gt;&lt;/div&gt;
 &lt;script type="text/javascript" 
-  src="http://github.com/abgov/ab-compensation-transparency-toolkit/js/ab-compensation-tools.js"&gt;
+  src="//abgov.github.io/ab-compensation-transparency-toolkit/cdn/lib/js/ab-compensation-tools.js"&gt;
 &lt;/script&gt;</code>
 </pre>
 
