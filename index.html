@@ -67,7 +67,6 @@
                 <li><a href="#implementation-guide" analytics-on analytics-category="Navigation" analytics-event="implementation-guide">Implementation Guide</a></li>
                 <li><a href="#self-host" analytics-on analytics-category="Navigation" analytics-event="self-host">Self-hosting</a></li>
                 <li><a href="//github.com/ab-compensation-tools/salaries" analytics-on analytics-category="Navigation" analytics-event="Source code">Source Code</a></li>
-                <!--<li><a href="//github.com/ab-compensation-tools/salaries/releases" analytics-on analytics-category="Navigation" analytics-event="Download">Download</a></li>-->
             </ul>
         </div>
     </nav>
@@ -223,16 +222,19 @@
 <code>&lt;div id="grid"&gt;&lt;/div&gt;
 &lt;script type="text/javascript" 
   src="//abgov.github.io/ab-compensation-transparency-toolkit/cdn/lib/js/ab-compensation-tools.js"&gt;
-&lt;/script&gt;</code>
-</pre>
+&lt;/script&gt;</code></pre>
 
-                    If your CSV file does not have the <b>default</b> name or location, also insert these lines to explicitly provide the URL.
+                    If your CSV file does not have the <b>default</b> name or location, insert the lines below instead to explicitly provide the URL.
 
 <pre class="prettyprint">
-<code>&lt;script type="text/javascript"&gt;
+<code>&lt;div id="grid"&gt;&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
   var csv = <del>"disclosure.csv"</del>; // &lt;-- <b>(Optional)</b> Change to URL of your CSV file.
-&lt;/script&gt;</code>
-</pre>
+&lt;/script&gt;
+&lt;script type="text/javascript" 
+  src="//abgov.github.io/ab-compensation-transparency-toolkit/cdn/lib/js/ab-compensation-tools.js"&gt;
+&lt;/script&gt;</code></pre>
+                    Notice to declare the customization variables before including <code>ab-compensation-tools.js</code>.
                 </div>
                 <p>
                     Your web page should be working now.
@@ -383,7 +385,6 @@
             </div>
             <div>
                 <p>
-                    <!--If you require the toolkit to be self-hosted, please continue to this procedure.-->
                     By default, this toolkit leverages Content Distribution Networks for the script, image and style assets.
                     This section contains more advanced instructions for those who prefer to self-host all toolkit assets.  
                     These steps are not required for the system to function, but may in some cases be preferable or required by your website administrator. 
@@ -408,13 +409,10 @@
                 <div class="alert alert-info">
                     <p>
                         Find where you want to embed the table, insert the lines below.
-                        Look for the toolkit files in <code>js/</code> and <code>css/</code> subdirectories respectively.
+                        Look for the files in subdirectories specified above.
                     </p>
                     <pre class="prettyprint">
 <code>&lt;div id="grid"&gt;&lt;/div&gt;
-&lt;script type="text/javascript"
-  src=<del>"js/ab-compensation-tools.js"</del>&gt;       // &lt;-- URL of self-hosted ab-compensation-tools.js
-  &lt;/script&gt;
 &lt;script type="text/javascript"&gt;
   var csv
     = <del>"disclosure.csv"</del>;                    // &lt;-- <b>(Optional)</b> Change to URL of your CSV file.
