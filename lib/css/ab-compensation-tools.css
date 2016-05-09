@@ -68,7 +68,7 @@
 
 #grid .jsgrid-alt-row td
 {
-    background-color:unset;
+    background-color:transparent;
 }
 
 #grid .jsgrid-header-sort:before {
@@ -171,6 +171,8 @@
 
 #grid .grid-filter {
     float: right;
+    margin: -.5em -.3em -.3em -.2em;
+    padding: .4em .2em .2em .2em;
 }
 
 #grid .filter-form {
