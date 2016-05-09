@@ -127,6 +127,7 @@
 #grid .jsgrid-pager-nav-button {
     border: 1px solid #c5c5c5;
     opacity: 0.8;
+    padding: 0;
 }
 
 #grid .jsgrid-pager-nav-inactive-button {
@@ -153,10 +154,8 @@
 #grid .jsgrid-pager-nav-button a {
     font-size: 0;
     display:block;
-    position: relative;
-    left: -10px;
-    top: -10px;
-    padding: 10px;
+    height: 100%;
+    width: 100%;
     color: rgba(0,0,0,0);
 }
 
