@@ -68,7 +68,7 @@
 
 #grid .jsgrid-alt-row td
 {
-    background-color:unset;
+    background-color:transparent;
 }
 
 #grid .jsgrid-header-sort:before {
