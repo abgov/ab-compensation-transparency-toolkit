@@ -189,6 +189,7 @@
 
 #grid .active .grid-filter
 {
+    background-color: #ffcd29;
     background: none, linear-gradient(to bottom, rgba(255, 205, 41, 0.3) 0px, rgba(255, 205, 41, 0.7) 100%);
 }
 
