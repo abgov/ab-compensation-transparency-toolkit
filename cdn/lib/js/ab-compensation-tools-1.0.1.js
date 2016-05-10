@@ -1,4 +1,4 @@
-/*!
+﻿/*!
 The License for the Government of Alberta source code is a modified version of the MIT License (MIT).
 
 Government of Alberta
@@ -397,6 +397,9 @@ var abCompToolkit = (function() {
                 sorting: false,
                 cellRenderer: function (value, item) {
                     return "<td>" + renderAttachments(item["ContractAttachment"], item["TerminationAttachment"]) + "</td>";
+                },
+                headerTemplate: function () {
+                    return headerInnerHtml(this);
                 },
                 headercss: strHeaderCss,
                 filtercss: "filter-form",

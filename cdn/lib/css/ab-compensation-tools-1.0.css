@@ -1,0 +1,209 @@
+﻿#grid {
+    color: #2e2e2e;
+    overflow: visible;
+}
+
+#grid .attachmentLink 
+{
+    background: url('./img/pdf.png') left center no-repeat;
+    padding: 2px 0 2px 20px;
+}
+
+#grid .jsgrid-grid-header, #grid .jsgrid-grid-body {
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+#grid .filter-icon {
+    background-image: url('img/filter.png');
+    opacity: 0.8;
+    display: inline-block;
+    width: 11px;
+    height: 12px;
+    vertical-align: middle;
+}
+
+#grid .filter-icon:hover {
+    opacity: 1.0;
+}
+
+#grid jsgrid-selected-row>td {
+    background: inherit;
+    border-color: inherit;
+}
+
+#grid .jsgrid-header-row>th {
+    padding: 0.5em 0.3em 0.3em 0.5em;
+}
+
+#grid .jsgrid-grid-body td, #grid .jsgrid-grid-header, #grid .jsgrid-header-row>th, #grid .jsgrid-grid-body {
+    border-color: #c5c5c5;
+}
+
+#grid .jsgrid-grid-body td {
+    border-width: 0 1px;
+}
+
+#grid .jsgrid-header-row>th {
+    background-color: #e3e3e3;
+    background-image: none,linear-gradient(to bottom,rgba(255,255,255,.6) 0,rgba(255,255,255,.0) 100%);
+    font-weight: normal;
+    text-align: left;
+}
+
+#grid .year
+{
+    width: 7%;
+}
+
+#grid .attachments
+{
+    width: 10%;
+}
+
+#grid .jsgrid-alt-row
+{
+    background-color:#ECE8E8;
+}
+
+#grid .jsgrid-alt-row td
+{
+    background-color:transparent;
+}
+
+#grid .jsgrid-header-sort:before {
+    display: none;
+}
+
+#grid .jsgrid-header-sort-asc:after {
+    border-width: 0 5px 5px;
+    border-color: transparent transparent #009a67;
+}
+
+#grid .jsgrid-header-sort-desc:after {
+    border-width: 5px 5px 0;
+    border-color: #009a67 transparent transparent;
+}
+
+#grid .jsgrid-header-sort:after {
+    content: " ";
+    display: block;
+    float: right;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin: .3em .2em .3em .1em;
+}
+
+#grid .jsgrid-pager-container {
+    padding: 0.3em;
+    width: 100%;
+    height: 33px;
+    background-color: #e3e3e3;
+    background-image: none,linear-gradient(to bottom,rgba(255,255,255,.6) 0,rgba(255,255,255,.0) 100%);
+    border: solid #c5c5c5;
+    border-width: 0 1px 1px 1px;
+}
+
+#grid .jsgrid-pager {
+    font-size: 0px;
+    margin: 0.5em, 0.3em;
+}
+
+#grid .jsgrid-pager span {
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 21px;
+    text-align: center;
+    display: block;
+    float: left;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-right: 0.3em;
+}
+
+#grid .jsgrid-pager-nav-button {
+    border: 1px solid #c5c5c5;
+    opacity: 0.8;
+    padding: 0;
+}
+
+#grid .jsgrid-pager-nav-inactive-button {
+    display: block;
+    opacity: 0.4;
+}
+
+#grid .jsgrid-pager-nav-button:nth-of-type(1) {
+    background: url('img/step-backward.png') 5px 5px no-repeat;
+}
+
+#grid .jsgrid-pager-nav-button:nth-of-type(2) {
+    background: url('img/caret-left.png') 4px 5px no-repeat;
+}
+
+#grid .jsgrid-pager-nav-button:nth-last-of-type(1) {
+    background: url('img/caret-right.png') 6px 5px no-repeat;
+}
+
+#grid .jsgrid-pager-nav-button:nth-last-of-type(2) {
+    background: url('img/step-forward.png') 5px 5px no-repeat;
+}
+
+#grid .jsgrid-pager-nav-button a {
+    font-size: 0;
+    display:block;
+    height: 100%;
+    width: 100%;
+    color: rgba(0,0,0,0);
+}
+
+#grid .jsgrid-pager-page a {
+    color: #2e2e2e;
+}
+
+#grid .jsgrid-pager-current-page {
+    background: #0E82AC;
+    color: white;
+}
+
+#grid .grid-filter {
+    float: right;
+    margin: -.5em -.3em -.3em -.2em;
+    padding: .4em .2em .2em .2em;
+}
+
+#grid .filter-form {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    background: white;
+    border: 1px solid #c5c5c5;
+    z-index: 1000;
+}
+
+#grid .filter-form.active {
+    display: block;
+}
+
+#grid .active .grid-filter
+{
+    background-color: #ffcd29;
+    background: none, linear-gradient(to bottom, rgba(255, 205, 41, 0.3) 0px, rgba(255, 205, 41, 0.7) 100%);
+}
+
+#grid .filter-form input, #grid .filter-form select {
+    display: block;
+    margin-bottom: 6px;
+    min-width: 50px;
+}
+
+#grid .filter-form button {
+    height: 25px;
+    width: 48.5%;
+}
+
+#grid .filter-form button:nth-of-type(1) {
+    margin-right: 3%;
+}

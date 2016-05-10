@@ -398,6 +398,9 @@ var abCompToolkit = (function() {
                 cellRenderer: function (value, item) {
                     return "<td>" + renderAttachments(item["ContractAttachment"], item["TerminationAttachment"]) + "</td>";
                 },
+                headerTemplate: function () {
+                    return headerInnerHtml(this);
+                },
                 headercss: strHeaderCss,
                 filtercss: "filter-form",
             }],
