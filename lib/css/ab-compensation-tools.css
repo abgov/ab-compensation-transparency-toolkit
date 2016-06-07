@@ -143,11 +143,11 @@
     background: url('img/caret-left.png') 4px 5px no-repeat;
 }
 
-#grid .jsgrid-pager-nav-button:nth-last-of-type(1) {
+#grid .jsgrid-pager-nav-button:nth-last-of-type(2) {
     background: url('img/caret-right.png') 6px 5px no-repeat;
 }
 
-#grid .jsgrid-pager-nav-button:nth-last-of-type(2) {
+#grid .jsgrid-pager-nav-button:nth-last-of-type(1) {
     background: url('img/step-forward.png') 5px 5px no-repeat;
 }
 
