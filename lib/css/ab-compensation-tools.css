@@ -159,6 +159,10 @@
     color: rgba(0,0,0,0);
 }
 
+#grid .jsgrid-pager-page {
+    padding:.2em .2em .1em .1em;
+}
+
 #grid .jsgrid-pager-page a {
     color: #2e2e2e;
 }
