@@ -173,7 +173,8 @@
 }
 
 #grid .jsgrid-pager-page {
-    padding:.2em .2em .1em .1em;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: .2em .05em .0em .15em;
 }
 
 #grid .jsgrid-pager-page a {
