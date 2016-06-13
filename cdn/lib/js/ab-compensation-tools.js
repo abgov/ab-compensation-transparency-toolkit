@@ -1,4 +1,6 @@
 ﻿/*!
+Alberta Compensation Transparency Toolkit v1.1
+
 The License for the Government of Alberta source code is a modified version of the MIT License (MIT).
 
 Government of Alberta
