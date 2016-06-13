@@ -285,7 +285,7 @@ var abCompToolkit = (function() {
         sizeFixSheet.insertRule('.grid-body { overflow: hidden; }', 0);
         
         
-        theJsGrid = $("#grid").jsGrid({
+        var gridConfig = {
             fields: [{
                 name: "PublicSectorBody",
                 title: "Public Sector Body",
@@ -440,7 +440,20 @@ var abCompToolkit = (function() {
             sorting: true,
             paging: true,
             
-        });
+        };
+
+        // give users a change to alter the configuration of the grid before
+        // it is rendered.
+        if ( typeof (gridConfigCallback) == 'function' ) {
+            var newConfig = gridConfigCallback( gridConfig );
+            if ( newConfig != null ) {
+                // ensure even those that forget to return the config will have
+                // a working grid.
+                gridConfig = newConfig;
+            }
+        }
+
+        theJsGrid = $("#grid").jsGrid(gridConfig);
 
         var $headerFilters = $('.filter-form');
         $headerFilters.each(function (index, item) {
@@ -458,7 +471,7 @@ var abCompToolkit = (function() {
         },
         
         onFilterClick: function(e, columnName) {
-            e.preventDefault();
+            e.preventDefault ? e.preventDefault() : (e.returnValue = false);
             e.stopPropagation();
             var filterForm = $('.' + columnName + '-filter');
             if ($(filterForm).hasClass('active')) {
@@ -477,13 +490,13 @@ var abCompToolkit = (function() {
         },
         
         onApplyClick: function(e, self) {
-            e.preventDefault();
+            e.preventDefault ? e.preventDefault() : (e.returnValue = false);
             $('.filter-form.active').slideUp().removeClass('active');
             $("#grid").jsGrid("search");
         },
 
         onClearClick: function(e, self, index) {
-            e.preventDefault();
+            e.preventDefault ? e.preventDefault() : (e.returnValue = false);
             $('.filter-form.active').slideUp().removeClass('active');
             var $header = $('.filter-form').eq(index);
             $header.find("input").val("");
