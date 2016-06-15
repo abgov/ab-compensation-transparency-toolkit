@@ -447,6 +447,60 @@ components are unavailable, or you are not using a supported browser such as Chr
                 </div>
             </div>
         </section>
+        <section id="callback-config" analytics-on="scrollby" analytics-category="Scrolling" scrollby-offset="20%">
+            <div class="page-header">
+                <h3>(Advanced) Grid Customization</h3>
+            </div>
+            <div>
+                <p>
+                    From release <code>v1.1</code>, the toolkit provides a callback function to customize the grid,
+                    e.g. hide a column, change column width, etc. 
+                    The toolkit does not enable this feature by default, so you can safely ignore this section if not using it.
+                </p>
+                <h4>The mechanism</h4>
+                <p>
+                    To enable grid customization, you need to define callback function <code>gridConfigCallback</code>.
+                    If the function is defined, the toolkit will invoke it before rendering the grid,
+                    with a pass-by-reference argument pointing to <code>gridConfig</code>, the configuration object of jsgrid library.
+                    In the function body, you can modify the configuration referenced by the argument,
+                    and the grid will render accordingly.
+                </p>
+                <h4>Define the callback function</h4>
+                <p>
+                    Customization may include many scenarios, and we will only show how to define the callback function.
+                    To explore all the possibilities of customization, we recommend you to read <a href="http://js-grid.com/docs/">jsgrid online document</a>
+                    and review <a href="https://github.com/abgov/ab-compensation-transparency-toolkit">the toolkit's source code</a>.
+                </p>
+                <div class="alert alert-info">
+                    <p>
+                        Find where you want to embed the table, and insert the lines below.
+                    </p>
+<pre class="prettyprint">
+<code>&lt;div id="grid"&gt;&lt;/div&gt;
+&lt;script type="text/javascript"&gt;
+  var gridConfigCallback = function (config) {
+    // Make your customizations here
+  };
+&lt;/script&gt;
+&lt;script type="text/javascript" 
+  src="//abgov.github.io/ab-compensation-transparency-toolkit/cdn/lib/js/ab-compensation-tools.js"&gt;
+&lt;/script&gt;</code></pre>
+                    <p>
+                        Notice:
+                        <ul>
+                            <li>
+                                The function should be defined before the script that loads <code>ab-compensation-tools.js</code>.
+                                If you use optional overrides such as <code>csv</code> and other variables,
+                                define the function in the same script block.
+                            </li>
+                            <li>
+                                The function should not return any value, any not <code>null</code> return value may cause errors.
+                            </li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+        </section>
         <section id="support">
             <div class="page-header">
                 <h3>Help and Debugging</h3>
