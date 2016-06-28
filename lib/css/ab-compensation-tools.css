@@ -9,6 +9,17 @@
     border: 0px;
 }
 
+#grid a {
+    font-weight: normal;
+    text-decoration: none;
+    color: #0081ab;
+}
+
+#grid a:hover {
+    color: #00aad2;
+    border-bottom: 1px solid #00aad2;
+}
+
 #grid .attachmentLink 
 {
     background: url('./img/pdf.png') left center no-repeat;
