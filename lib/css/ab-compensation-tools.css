@@ -3,6 +3,12 @@
     overflow: visible;
 }
 
+#grid table {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+}
+
 #grid .attachmentLink 
 {
     background: url('./img/pdf.png') left center no-repeat;
