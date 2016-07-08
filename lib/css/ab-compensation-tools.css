@@ -8,6 +8,7 @@
     padding: 0px;
     border: 0px;
     table-layout: fixed;
+    width: 100%;
 }
 
 #grid a {
