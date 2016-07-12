@@ -15,6 +15,7 @@
     font-weight: normal;
     text-decoration: none;
     color: #0081ab;
+    display:inline-block;
 }
 
 #grid a:hover {
