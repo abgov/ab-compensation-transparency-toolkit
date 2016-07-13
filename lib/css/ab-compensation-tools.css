@@ -131,6 +131,11 @@
     text-align: left;
 }
 
+#grid .jsgrid-header-row,
+#grid .jsgrid-header-row>th {
+    height: 100%;
+}
+
 #grid .jsgrid-header-row>th div {
     display: inline-block;
     width: 100%;
