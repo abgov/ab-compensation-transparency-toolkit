@@ -277,6 +277,7 @@
 #grid .filter-form button {
     height: 25px;
     width: 48.5%;
+    padding: 0px;
 }
 
 #grid .filter-form button:nth-of-type(1) {
