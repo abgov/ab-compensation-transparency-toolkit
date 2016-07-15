@@ -123,7 +123,7 @@
     margin: .3em .2em .3em .1em;
     position: absolute;
     bottom: 0px;
-    right: 11px;
+    right: 9px;
 }
 
 #grid .jsgrid-header-row>th {
@@ -136,16 +136,38 @@
     height: 100%;
 }
 
-#grid .jsgrid-header-row>th div {
+#grid .jsgrid-header-row>th div.grid-header-cell {
     display: inline-block;
     width: 100%;
     height: 100%;
-    position: relative;    
+    position: relative;
+}
+
+#grid .jsgrid-header-row>th div.grid-header-tags-push-down {
+    float: right;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    background-color: transparent;
+}
+
+#grid .jsgrid-header-row > th div.grid-header-tags {
+    position: relative;
+    display: block;
+    float: right;
+    clear: right;
+    width: 25px;
+    height: 15px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px solid gray;
 }
 
 #grid .jsgrid-header-row>th div .grid-filter {
     position: absolute;
-    display: block;
+    display: inline-block;
     right: 0px;
     bottom: 0px;
 }
