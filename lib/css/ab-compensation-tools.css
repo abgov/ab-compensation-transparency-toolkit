@@ -98,23 +98,23 @@
     display: none;
 }
 
-#grid .jsgrid-header-sortable .sort-tag {
+#grid .jsgrid-header-sortable div.grid-header-tags .sort-tag {
     border-width: 0 5px 5px;
     border-color: transparent transparent transparent;
 }
 
-#grid .jsgrid-header-sort-asc .sort-tag {
+#grid .jsgrid-header-sort-asc div.grid-header-tags .sort-tag {
     border-width: 0 5px 5px;
     border-color: transparent transparent #009a67;
 }
 
-#grid .jsgrid-header-sort-desc .sort-tag {
+#grid .jsgrid-header-sort-desc div.grid-header-tags .sort-tag {
     border-width: 5px 5px 0;
     border-color: #009a67 transparent transparent;
 }
 
-#grid .jsgrid-header-sortable .sort-tag,
-#grid .jsgrid-header-sort .sort-tag {
+#grid .jsgrid-header-sortable div.grid-header-tags .sort-tag,
+#grid .jsgrid-header-sort div.grid-header-tags .sort-tag {
     content: " ";
     display: inline-block;
     width: 0;
@@ -124,6 +124,30 @@
     position: absolute;
     bottom: 0px;
     right: 9px;
+}
+
+#grid div.jsgrid-grid-header table.jsgrid-table .grid-header-tags-contained:after {
+    display: none;
+}
+
+#grid .jsgrid-header-sort:after {
+    content: " ";
+    display: block;
+    float: right;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin: .3em .2em .3em .1em;
+}
+
+#grid .jsgrid-header-sort-asc:after {
+    border-width: 0 5px 5px;
+    border-color: transparent transparent #009a67;
+}
+
+#grid .jsgrid-header-sort-desc:after {
+    border-width: 5px 5px 0;
+    border-color: #009a67 transparent transparent;
 }
 
 #grid .jsgrid-header-row>th {
