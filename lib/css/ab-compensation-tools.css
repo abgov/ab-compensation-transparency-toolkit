@@ -323,10 +323,8 @@
 
 #grid .filter-form button {
     height: 25px;
-    width: 48.5%;
+    width: 48%;
     padding: 0px;
-}
-
-#grid .filter-form button:nth-of-type(1) {
-    margin-right: 3%;
+    margin-right: 1%;
+    margin-left: 1%;
 }
