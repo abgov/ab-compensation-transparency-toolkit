@@ -457,9 +457,25 @@ components are unavailable, or you are not using a supported browser such as Chr
                 <p>
                     To enable grid customization, you need to define callback function <code>gridConfigCallback</code>.
                     If the function is defined, the toolkit will invoke it before rendering the grid,
-                    with a pass-by-reference argument pointing to <code>gridConfig</code>, the configuration object of jsgrid library.
-                    In the function body, you can modify the configuration referenced by the argument,
-                    and the grid will render accordingly.
+                    with two pass-by-reference arguments.
+                    <ul>
+                        <li>
+                            The first argument points to <code>gridConfig</code>, the configuration object of jsgrid library.
+                            In the function body, you can modify the configuration referenced by the argument,
+                            and the grid will render accordingly.
+                        </li>
+                        <li>
+                            The second argument points to the same <code>jQuery</code> object used by the toolkit,
+                            please use it for your jQuery calls to keep the same.
+                            <div class="alert alert-info">
+                                <p>
+                                    With the improved compatibility from release <code>v1.2</code> ,
+                                    the default global <code>$</code> can be a different version of jQuery
+                                    or something defined by another library.
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
                 </p>
                 <h4>Define the callback function</h4>
                 <p>
@@ -474,8 +490,9 @@ components are unavailable, or you are not using a supported browser such as Chr
 <pre class="prettyprint">
 <code>&lt;div id="grid"&gt;&lt;/div&gt;
 &lt;script type="text/javascript"&gt;
-  var gridConfigCallback = function (config) {
+  var gridConfigCallback = function (config, $) {
     // Make your customizations here
+    // Use $ for jQuery calls, e.g. $.fn.jquery;
   };
 &lt;/script&gt;
 &lt;script type="text/javascript" 
