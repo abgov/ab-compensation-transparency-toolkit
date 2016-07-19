@@ -7,6 +7,26 @@ Alberta Compensation Transparency Toolkit v1.1
     overflow: visible;
 }
 
+#grid table {
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    table-layout: fixed;
+    width: 100%;
+}
+
+#grid a {
+    font-weight: normal;
+    text-decoration: none;
+    color: #0081ab;
+    display:inline-block;
+}
+
+#grid a:hover {
+    color: #00aad2;
+    border-bottom: 1px solid #00aad2;
+}
+
 #grid .attachmentLink 
 {
     background: url('./img/pdf.png') left center no-repeat;
@@ -36,8 +56,11 @@ Alberta Compensation Transparency Toolkit v1.1
     border-color: inherit;
 }
 
-#grid .jsgrid-header-row>th {
+#grid .jsgrid-header-row>th,
+#grid .jsgrid-table td,
+#grid td {
     padding: 0.5em 0.3em 0.3em 0.5em;
+    word-wrap:break-word;
 }
 
 #grid .jsgrid-grid-body td, #grid .jsgrid-grid-header, #grid .jsgrid-header-row>th, #grid .jsgrid-grid-body {
@@ -79,14 +102,36 @@ Alberta Compensation Transparency Toolkit v1.1
     display: none;
 }
 
-#grid .jsgrid-header-sort-asc:after {
+#grid .jsgrid-header-sortable div.grid-header-tags .sort-tag {
+    border-width: 0 5px 5px;
+    border-color: transparent transparent transparent;
+}
+
+#grid .jsgrid-header-sort-asc div.grid-header-tags .sort-tag {
     border-width: 0 5px 5px;
     border-color: transparent transparent #009a67;
 }
 
-#grid .jsgrid-header-sort-desc:after {
+#grid .jsgrid-header-sort-desc div.grid-header-tags .sort-tag {
     border-width: 5px 5px 0;
     border-color: #009a67 transparent transparent;
+}
+
+#grid .jsgrid-header-sortable div.grid-header-tags .sort-tag,
+#grid .jsgrid-header-sort div.grid-header-tags .sort-tag {
+    content: " ";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    margin: .3em .2em .3em .1em;
+    position: absolute;
+    bottom: 0px;
+    right: 9px;
+}
+
+#grid div.jsgrid-grid-header table.jsgrid-table .grid-header-tags-contained:after {
+    display: none;
 }
 
 #grid .jsgrid-header-sort:after {
@@ -99,9 +144,66 @@ Alberta Compensation Transparency Toolkit v1.1
     margin: .3em .2em .3em .1em;
 }
 
+#grid .jsgrid-header-sort-asc:after {
+    border-width: 0 5px 5px;
+    border-color: transparent transparent #009a67;
+}
+
+#grid .jsgrid-header-sort-desc:after {
+    border-width: 5px 5px 0;
+    border-color: #009a67 transparent transparent;
+}
+
+#grid .jsgrid-header-row>th {
+    vertical-align: top;
+    text-align: left;
+}
+
+#grid .jsgrid-header-row,
+#grid .jsgrid-header-row>th {
+    height: 100%;
+}
+
+#grid .jsgrid-header-row>th div.grid-header-cell {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+#grid .jsgrid-header-row>th div.grid-header-tags-push-down {
+    float: right;
+    width: 0px;
+    height: 0px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    background-color: transparent;
+}
+
+#grid .jsgrid-header-row > th div.grid-header-tags {
+    position: relative;
+    display: block;
+    float: right;
+    clear: right;
+    width: 25px;
+    height: 15px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px solid gray;
+}
+
+#grid .jsgrid-header-row>th div .grid-filter {
+    position: absolute;
+    display: inline-block;
+    right: 0px;
+    bottom: 0px;
+}
+
 #grid .jsgrid-pager-container {
     padding: 0.3em;
     width: 100%;
+    height: auto;
     background-color: #e3e3e3;
     background-image: none,linear-gradient(to bottom,rgba(255,255,255,.6) 0,rgba(255,255,255,.0) 100%);
     border: solid #c5c5c5;
@@ -225,9 +327,8 @@ Alberta Compensation Transparency Toolkit v1.1
 
 #grid .filter-form button {
     height: 25px;
-    width: 48.5%;
-}
-
-#grid .filter-form button:nth-of-type(1) {
-    margin-right: 3%;
+    width: 48%;
+    padding: 0px;
+    margin-right: 1%;
+    margin-left: 1%;
 }
