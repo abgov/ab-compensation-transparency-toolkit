@@ -199,6 +199,7 @@
 #grid .jsgrid-pager-container {
     padding: 0.3em;
     width: 100%;
+    height: auto;
     background-color: #e3e3e3;
     background-image: none,linear-gradient(to bottom,rgba(255,255,255,.6) 0,rgba(255,255,255,.0) 100%);
     border: solid #c5c5c5;
